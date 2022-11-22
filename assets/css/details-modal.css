@@ -1,0 +1,254 @@
+:root {
+    --my-end-width-hp: 0px;
+    --my-end-width-atq: 0px;
+    --my-end-width-def: 0px;
+    --my-end-width-satq: 0px;
+    --my-end-width-sdef: 0px;
+    --my-end-width-spd: 0px;
+}
+
+
+#modal-background {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.7);
+    align-items: center;
+}
+
+.modal-content {
+    background-color: rgb(25, 25, 31);
+    color: rgb(240, 240, 240);
+    margin: auto;
+    padding: 1px 10px 10px 10px;
+    border: 2px solid #d53a3a;
+    border-radius: 1rem;
+    overflow: hidden;
+}
+
+.modal-content h2 {
+    font-size: 1.5rem;
+    margin: auto;
+    padding: 0;
+    text-align: center;
+}
+
+#close {
+    grid-area: right;
+    color: #aaaaaa;
+    font-size: 25px;
+    font-weight: bold;
+}
+#close:hover,
+#close:focus {
+    color: #7c7777;
+    cursor: pointer;
+}
+
+.detail-header {
+    display: flex;
+}
+
+.detail-status {
+    background-color: #7c7777;
+    padding: 0.6rem;
+    border-radius: 1rem;
+    width: fit-content;
+    height: fit-content;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#pokemon-detail-img-status  {
+    display: inline;
+    justify-content: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#pokemon-detail-all {
+    display: grid;
+    grid-template-columns: 1fr;
+}
+
+#pokemon-detail-img  {
+    width: 250px;
+    height: 250px;
+}
+
+.pokemon-detail-information-type {
+    font-size: 1.3rem;
+    background-color: #7c7777;
+    border-radius: 1rem;
+    margin: 0.4rem;
+    display: grid;
+    grid-template-rows: auto;
+    padding: 1.2rem;
+}
+
+.top-information {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.pokemon-detail-information-type p {
+    color:rgb(25, 25, 25);
+    margin: 0.7rem 0.4rem;
+    font-size: 1rem;
+}
+
+.habilities-list{
+    padding: 0;
+    margin: 0.7rem 0.4rem;
+}
+
+.habilidade {
+    color: rgb(25,25,25);
+    font-size: 1rem;
+    text-transform: capitalize;
+}
+
+.statsContainer {
+    text-align: center;
+    border-radius: 1rem;
+    font-size: 0.7rem;
+    width: 13rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+    justify-content: center;
+}
+
+.details-type { 
+    align-items: center;
+    justify-content: space-between;
+}
+
+.details-type .types {
+    margin: 0;
+    padding: .3rem .3rem;
+    list-style: none;
+}
+
+.details-type .types .type {
+    display: inline-block;
+    background-image: none;
+    color: rgb(240, 240, 240);
+    padding: 0.25rem 0.5rem;
+    font-size: .9rem;
+    text-shadow: 2px 2px 3px #666464;
+    margin: 0.25rem 2px;
+    border-radius: .3rem;
+    text-align: center;
+    width: 5rem;
+}
+
+.statsBar {
+    height: 120px;
+    width: 20px;
+    margin: auto;
+    background-color: rgb(73, 164, 255);
+}
+
+.statsBar .statsBarProgressHp {
+    background-color: #CCC;
+    animation: progress-animation-hp 2s ease;
+    animation-fill-mode: both;
+}
+
+.statsBar .statsBarProgressAtq {
+    background-color: #CCC;
+    animation: progress-animation-atq 2s ease;
+    animation-fill-mode: both;
+}
+
+.statsBar .statsBarProgressDef {
+    background-color: #CCC;
+    animation: progress-animation-def 2s ease;
+    animation-fill-mode: both;
+}
+
+.statsBar .statsBarProgressSAtq {
+    background-color: #CCC;
+    animation: progress-animation-satq 2s ease;
+    animation-fill-mode: both;
+}
+
+.statsBar .statsBarProgressSDef {
+    background-color: #CCC;
+    animation: progress-animation-sdef 2s ease;
+    animation-fill-mode: both;
+}
+
+.statsBar .statsBarProgressSpeed {
+    background-color: #CCC;
+    animation: progress-animation-spd 2s ease;
+    animation-fill-mode: both;
+}
+
+@keyframes progress-animation-hp {
+    0% {
+        height: 120px;
+    }
+
+    100% {
+        height: var(--my-end-width-hp);
+    }
+}
+
+@keyframes progress-animation-atq {
+    0% {
+        height: 120px;
+    }
+
+    100% {
+        height: var(--my-end-width-atq);
+    }
+}
+
+@keyframes progress-animation-def {
+    0% {
+        height: 120px;
+    }
+
+    100% {
+        height: var(--my-end-width-def);
+    }
+}
+
+@keyframes progress-animation-satq {
+    0% {
+        height: 120px;
+    }
+
+    100% {
+        height: var(--my-end-width-satq);
+    }
+}
+
+@keyframes progress-animation-sdef {
+    0% {
+        height: 120px;
+    }
+
+    100% {
+        height: var(--my-end-width-sdef);
+    }
+}
+
+@keyframes progress-animation-spd {
+    0% {
+        height: 120px;
+    }
+
+    100% {
+        height: var(--my-end-width-spd);
+    }
+}
+

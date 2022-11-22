@@ -1,24 +1,74 @@
+.title {
+    width: 280px;
+    font-size: 40px;
+    background: -webkit-linear-gradient(left, rgb(255, 0, 0), rgb(0, 0, 255));
+    -webkit-background-clip: text;
+    background-clip: inset 0 0 6px rgba(0, 0, 0, 0.1);
+    -webkit-text-fill-color: transparent;
+}
+
+.paginationButtons {
+    margin-top: 6px;
+    visibility: hidden;
+    width: 8vh;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+button {
+    background-color: rgb(170, 170, 170);
+}
+
+button:hover,
+button:focus {
+    background-color: rgb(120, 120, 120);
+    cursor: pointer;
+}
+
+#Search {
+    visibility: hidden;
+    height: 2em;
+    width: 50%;
+    border-radius: 20px;
+    border-color: azure;
+    color: rgb(200, 200, 200);
+    padding: 20px;
+    padding-right: 7%;
+    background: url(../img/icone-loupe-gris.png) no-repeat right;
+    background-size: 25px;
+    background-position: 95% 50%;
+}
+
+.buttonsContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+html {
+    background-color: rgb(16, 16, 16);
+}
+
 * {
     font-family: 'Roboto', sans-serif;
     box-sizing: border-box;
 }
 
-body {
-    background-color: #f6f8fc;
+.topboard {
+    text-align: right;
+    color: #fff;
 }
 
 .content {
     width: 100vw;
-    height: 100vh;
     padding: 1rem;
-    background-color: #fff;
+    background-color: rgb(25, 25, 31);
 }
 
-@media screen and (min-width: 992px) {
-    .content {
-        max-width: 992px;
-        height: auto;
-        margin: 1rem auto;
-        border-radius: 1rem;
-    }
+.content h1 {
+    margin: 0;
 }
