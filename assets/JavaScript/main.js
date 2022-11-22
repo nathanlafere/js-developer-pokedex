@@ -48,7 +48,7 @@ function getDocHeight() {
     return Math.max(
         document.body.scrollHeight, document.documentElement.scrollHeight,
         document.body.offsetHeight, document.documentElement.offsetHeight,
-        document.body.clientHeight, document.documentElement.clientHeight
+        document.body.clientHeight
     );
 }
 
@@ -302,9 +302,24 @@ checkBox.onclick = function () {
     }
 }
 
+// EventListener para capturar toques no celular, e caso a tela atingir o valor de altura do documento, carregar mais pokemons
+ontouchmove = (x) => {
+    if (parseInt(x.view.pageYOffset) >= document.body.scrollHeight - x.view.innerHeight && checkBox.checked === false && !inputVal) {
+        if (offset + pokePerScroll < 251) {
+            offset += pokePerScroll;
+            if (offset + pokePerScroll > 251) {
+                let over = offset + pokePerScroll - 251;
+                loadPokemonItens(offset, pokePerScroll - over);
+            } else {
+                loadPokemonItens(offset, pokePerScroll);
+            }
+        }
+    }
+} 
+
 // EventListener para capturar movimento do scroll, e caso o scroll atingir o valor de altura do documento, carregar mais pokemons
 onscroll = () => {
-    if (window.scrollY + window.innerHeight === getDocHeight() && checkBox.checked === false && !inputVal) {
+    if (window.pageYOffset + document.documentElement.clientHeight === getDocHeight() && checkBox.checked === false && !inputVal) {
         if (offset + pokePerScroll < 251) {
             offset += pokePerScroll;
             if (offset + pokePerScroll > 251) {
