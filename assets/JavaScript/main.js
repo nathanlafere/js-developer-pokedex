@@ -40,7 +40,7 @@ if (mediaQuery768px.matches) {
 const mediaQuery992px = window.matchMedia('(min-width: 992px)')
 if (mediaQuery992px.matches) {
     pokePerPage = 16;
-    pokePerScroll = 24;
+    pokePerScroll = 28;
 }
 
 // Encontrei em algum lugar que alguns navegadores tem uns problemas com o tamanho da tela, e que os resultados podem variar, então procurei pelo maior dos valores aqui
