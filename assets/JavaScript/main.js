@@ -4,6 +4,7 @@ const buttonNext = document.getElementById('Next');
 const modal = document.getElementById("modal-background");
 const searchInputPoke = document.getElementById('Search');
 const pokemonList = document.getElementById("pokemonList");
+const loading = document.getElementById('loading')
 const body = document.querySelector("body");
 let inputVal = false;
 let pokePerScroll = 6;
@@ -279,6 +280,7 @@ buttonNext.onclick = function () {
 // Chamando a interface de acordo com a checkBox estar ou não marcada
 checkBox.onclick = function () {
     if (checkBox.checked) {
+        loading.innerText = ""
         offset = 0;
         loadPokemonItensPage(offset, pokePerPage);
         document.getElementById('Back').style.visibility = "visible";
@@ -295,8 +297,9 @@ checkBox.onclick = function () {
 
 // EventListener para capturar movimento do scroll, e caso o scroll atingir o valor de altura do documento, carregar mais pokemons
 onscroll = () => {
-    const a = document.getElementById('loading')
-    a.innerText = `Loading ...`
+    if (checkBox.checked === false && !inputVal) {
+        loading.innerText = `Loading ...`
+    }
     if (window.innerHeight + Math.round(window.pageYOffset) === document.documentElement.scrollHeight && checkBox.checked === false && !inputVal) {
         if (offset + pokePerScroll < 251) {
             offset += pokePerScroll;
