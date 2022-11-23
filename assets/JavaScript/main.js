@@ -43,15 +43,6 @@ if (mediaQuery992px.matches) {
     pokePerScroll = 28;
 }
 
-// Encontrei em algum lugar que alguns navegadores tem uns problemas com o tamanho da tela, e que os resultados podem variar, então procurei pelo maior dos valores aqui
-function getDocHeight() {
-    return Math.max(
-        document.body.scrollHeight, document.documentElement.scrollHeight,
-        document.body.offsetHeight, document.documentElement.offsetHeight,
-        document.body.clientHeight
-    );
-}
-
 // Função para entender que parou de digitar e chamar a função da pesquisa
 searchInputPoke.addEventListener('keyup', () => {
     clearTimeout(typingTimer);
@@ -302,24 +293,11 @@ checkBox.onclick = function () {
     }
 }
 
-// EventListener para capturar toques no celular, e caso a tela atingir o valor de altura do documento, carregar mais pokemons
-ontouchmove = (x) => {
-    if (parseInt(x.view.pageYOffset) >= document.body.scrollHeight - x.view.innerHeight && checkBox.checked === false && !inputVal) {
-        if (offset + pokePerScroll < 251) {
-            offset += pokePerScroll;
-            if (offset + pokePerScroll > 251) {
-                let over = offset + pokePerScroll - 251;
-                loadPokemonItens(offset, pokePerScroll - over);
-            } else {
-                loadPokemonItens(offset, pokePerScroll);
-            }
-        }
-    }
-} 
-
 // EventListener para capturar movimento do scroll, e caso o scroll atingir o valor de altura do documento, carregar mais pokemons
 onscroll = () => {
-    if (window.pageYOffset + document.documentElement.clientHeight === getDocHeight() && checkBox.checked === false && !inputVal) {
+    const a = document.getElementById('loading')
+    a.innerText = `Loading ...`
+    if (window.innerHeight + Math.round(window.pageYOffset) === document.documentElement.scrollHeight && checkBox.checked === false && !inputVal) {
         if (offset + pokePerScroll < 251) {
             offset += pokePerScroll;
             if (offset + pokePerScroll > 251) {

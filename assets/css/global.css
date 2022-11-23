@@ -63,6 +63,11 @@ html {
     color: #fff;
 }
 
+#loading {
+    color:#fff;
+    text-align: center;
+}
+
 .content {
     width: 100vw;
     padding: 1rem;
