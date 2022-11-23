@@ -23,9 +23,12 @@ button {
     background-color: rgb(170, 170, 170);
 }
 
-button:hover,
-button:focus {
+button:hover {
     background-color: rgb(120, 120, 120);
+    cursor: pointer;
+}
+button:active {
+    background-color: rgb(80, 80, 80);
     cursor: pointer;
 }
 
