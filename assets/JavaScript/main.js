@@ -72,6 +72,7 @@ function doneTyping() {
                 loadPokemonItensPage(offset, pokePerPage);
             }
         } else {
+            loading.innerText = ""
             if (!isNaN(searchInputPoke.value) && searchInputPoke.value <= 251) {
                 SearchByNum(searchInputPoke.value)
             } else {
@@ -199,7 +200,7 @@ function loadPokemonItensPage(offset, pokePerPage) {
     passList = [];
     if (searchInputPoke.value) {
         offset = 0;
-        // Poderia ter chamado todos de uma vez, mas de começo pensei em pegar apenas até conseguir preencher uma página, dps percebi que não tem tantos pokemons assim
+        // Poderia ter chamado todos de uma vez, mas de começo pensei em pegar apenas até conseguir preencher uma página, dps percebi que não tem tantos pokemons assim em 2 gerações
         while (offset < 251) {
             if (offset + pokePerPage > 251) {
                 pokePerPage = 251 - offset;
@@ -231,7 +232,7 @@ function loadPokemonItens(offset, pokePerScroll) {
     passList = [];
     if (searchInputPoke.value) {
         offset = 0;
-        // Mesma coisa aqui, poderia ter chamado todos de uma vez...
+        // Poderia ter chamado todos de uma vez, mas de começo pensei em pegar apenas até conseguir preencher uma página, dps percebi que não tem tantos pokemons assim em 2 gerações
         while (offset < 251) {
             if (offset + pokePerScroll > 251) {
                 pokePerScroll = 251 - offset;
